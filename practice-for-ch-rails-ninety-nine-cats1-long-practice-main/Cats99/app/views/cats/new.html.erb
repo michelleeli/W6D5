@@ -8,19 +8,32 @@
     <br />
 
     <label> Color:
-        <input type="text" name="cat[color]">
+        <select name="cat[color]">
+            <option disabled="disabled" selected = "selected">--Select a Color--</option>
+            <option value="brown">Brown</option>
+            <option value="green">Green</option>
+            <option value="orange">Orange</option>
+            <option value="green">Green</option>
+        </select>
     </label>
 
     <br />
 
     <label> Birth_date:
-        <input type="text" name="cat[birth_date]">
+        <input type="date" name="cat[birth_date]">
     </label>
 
 
+    <br />
+
     <label> Sex:
-        <input type="text" name="cat[sex]">
-    <label>
+        <label> M:
+         <input type="radio" value = "M" name="cat[sex]"> 
+        </label>
+        <label> F:
+         <input type="radio" value = "F" name="cat[sex]"> 
+         </label>
+    </label>
 
     <br />
 
