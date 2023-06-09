@@ -1,0 +1,11 @@
+<h1> These are all of our users </h1>
+
+<ul>
+    <% @cats.each do |loop_cat| %>
+        <li>
+            <%= render 'cat', cat: loop_cat, action: :index %>
+        </li>
+    <% end %>
+
+</ul>
+
