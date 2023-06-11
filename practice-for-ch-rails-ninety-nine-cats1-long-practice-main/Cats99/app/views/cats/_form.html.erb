@@ -1,0 +1,55 @@
+
+<% action = (cat.persisted? ? cat_url(cat) : cats_url) %>
+<% method = (cat.persisted? ? :PATCH : :POST ) %>
+
+<form action="<%= action %>" method="POST">
+    <input type= "hidden" name="_method" value= "<%= method %>">
+    
+    <label> Name:
+    <input type="text" name="cat[name]" value= "<%= cat.name%>">
+    </label>
+
+    <br />
+
+    <label> Color:
+        <select name="cat[color]">
+            <option disabled="disabled" selected = "selected"> <%= cat.color %> </option>
+            <option value="brown">Brown</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="green">Green</option>
+        </select>
+    </label>
+
+    <br />
+
+    <label> Birth_date:
+        <input type="date" name="cat[birth_date]" value = "<%= cat.birth_date%>">
+    </label>
+
+
+    <br />
+
+    <label> Sex:
+        <label> M:
+         <input type="radio" value = "M" name="cat[sex]" <%= cat.sex == "M" ? "checked" : "" %> > 
+        </label>
+        <label> F:
+         <input type="radio" value = "F" name="cat[sex]" <%= cat.sex == "F" ? "checked" : "" %> > 
+         </label>
+    </label>
+
+    <br />
+
+    <label> Give a description for your cat: (optional) 
+
+        <textarea rows= "3" cols= "12" name= "cat[description]"> <%= cat.description %> </textarea>
+        
+
+    </label>
+
+    <br />
+    <% submit_text = (cat.persisted? ? "Update Cat" : "Create Cat") %>
+    <input type="submit" value= "<%= submit_text %>" >
+
+    </form>

@@ -15,6 +15,8 @@ class CatsController < ApplicationController
     end 
 
     def new 
+        @cat = Cat.new 
+        
         render :new
     end 
 
@@ -48,7 +50,7 @@ class CatsController < ApplicationController
 
     private 
         def cat_params
-            params.require(:cat).permit(:name, :color, :birth_date, :sex)
+            params.require(:cat).permit(:name, :color, :birth_date, :sex, :description)
         end 
-
+ 
 end
